@@ -1,0 +1,1 @@
+export const uniqueNumber = new Date().getTime(); // Get current timestamp

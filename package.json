@@ -1,22 +1,22 @@
 {
-  "name": "taf",
+  "name": "advancedcourse",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "local": "playwright test --config=config/local.config.ts --headed",
-    "web": "playwright test --config=config/web.config.ts --headed"
+    "cy:open": "cypress open --env",
+    "cy:open:local": "npm run cy:open -- --config-file cypress/config/local",
+    "cy:open:web": "npm run cy:open -- --config-file cypress/config/web.js"
   },
-  "author": "",
+  "author": "Ernest",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "allure-playwright": "^2.15.0",
-    "dotenv": "^16.4.5",
-    "playwright": "^1.42.1",
-    "winston": "^3.12.0"
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.6",
+    "merge-partially": "^2.0.2",
+    "cypress": "^12.6.0"
   },
-  "devDependencies": {
-    "@playwright/test": "^1.42.1",
-    "@types/node": "^20.11.30"
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/support/step_definitions"
   }
 }
